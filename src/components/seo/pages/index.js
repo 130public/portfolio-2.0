@@ -23,7 +23,7 @@ const IndexPage = (props) => {
       </Hero>
       <Main>
         <h2>Recently read, watched, or listened</h2>
-        {/* <Resources enableSearch={false} hitsPerPage={3} colWidth="25%" /> */}
+        <Resources enableSearch={false} hitsPerPage={3} colWidth="25%" />
       </Main>
     </Layout>
   )
