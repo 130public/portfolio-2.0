@@ -4,7 +4,9 @@ import Brand from "../Brand";
 
 const FooterStyled = styled.footer`
   padding-top:var(--gutter-md);
+  padding-right:var(--gutter-xl);
   padding-bottom:var(--gutter-md);
+  padding-left:var(--gutter-xl);
   @extend .u-gutters;
   @extend .u-spacers--inside;
   border-top:2px solid var(--text-primary);
@@ -14,7 +16,7 @@ const FooterStyled = styled.footer`
 const Footer = (props) => {
   return(
     <FooterStyled>
-      <Brand left="THE" right="END"/>
+      <Brand left="THE" right="END" to="/colophon" />
       {props.children}
     </FooterStyled>
   )

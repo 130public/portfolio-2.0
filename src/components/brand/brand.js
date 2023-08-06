@@ -13,9 +13,9 @@ const BrandLink = styled(Link)`
   text-transform:uppercase;
   cursor:pointer;
   .left{
-    color:white;
-    border:var(--border-weight) solid var(--theme-color-text);
-    background:var(--theme-color-text);
+    color: ${({ theme }) => theme.colorTextInverted1};
+    border:var(--border-weight) solid ${({ theme }) => theme.colorText1};
+    background: ${({ theme }) => theme.colorText1};
     margin-right:0.25rem;
     padding:0 0.25rem;
   }
@@ -24,21 +24,24 @@ const BrandLink = styled(Link)`
   }
   .right{
     padding:0 0.25rem;
-    color:var(--theme-color-text);
-    border:var(--border-weight) solid var(--theme-color-text);
-    background:white;
+    color: ${({ theme }) => theme.colorText1};
+    border:var(--border-weight) solid ${({ theme }) => theme.colorText1};
+    background: ${({ theme }) => theme.colorTextInverted1};
+  }
+  .left, .right{
+    transition: all var(--durationSlow); var(--curveEasyEase);
   }
   &:hover, &:focus{
     outline:none;
-    .left{
-      color:var(--theme-color-primary);
-      background:white;
-      border-color:var(--theme-color-primary);
-    }
     .right{
-      color:white;
-      background:var(--theme-color-primary);
-      border-color:var(--theme-color-primary);
+      color: ${({ theme }) => theme.colorTextInverted1};
+      background: ${({ theme }) => theme.colorText1};
+      border-color: ${({ theme }) => theme.colorText1};
+    }
+    .left{
+      color: ${({ theme }) => theme.colorText1};
+      background: ${({ theme }) => theme.colorTextInverted1};
+      border-color: ${({ theme }) => theme.colorText1};
     }
   }
 `;

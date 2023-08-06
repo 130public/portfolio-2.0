@@ -6,10 +6,10 @@ const Card = (props) => {
   const {cardType} = props;
   return (
     <>
-    {cardType == "resource" &&
+    {cardType === "resource" &&
       <ResourceCard {...props} />
     }
-    {cardType == "project" &&
+    {cardType === "project" &&
       <ProjectCard {...props} />
     }
     </>

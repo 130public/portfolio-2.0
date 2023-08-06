@@ -42,12 +42,13 @@ export const GlobalVars = createGlobalStyle`
     --screen-md: 25rem;
     --screen-lg: 32rem;
 
-    --base-size:16px;
+    --base-size:20px;
     --font-xs: 0.875rem;
     --font-sm: 1.0rem;
     --font-md: 1.15rem;
     --font-lg: 1.5rem;
-    --font-xl: 2.15rem;
+    --font-xl: 2.25rem;
+    --font-xxl: 3rem;
 
     --gutter-xs:0.5rem;
     --gutter-sm:1rem;
@@ -55,7 +56,8 @@ export const GlobalVars = createGlobalStyle`
     --gutter-lg:4rem;
     --gutter-xl:6rem;
 
-    --shadow-weight: -0.115rem;
+    --underline-weight: -0.0625em;
+    --shadow-weight: -0.110rem;
     --border-weight: 0.125rem;
 
     --borderRadiusNone: 0;
@@ -82,6 +84,15 @@ export const GlobalVars = createGlobalStyle`
     --curveEasyEaseMax: cubic-bezier(0.8,0,0.1,1);
     --curveEasyEase: cubic-bezier(0.33,0,0.67,1);
     --curveLinear: cubic-bezier(0,0,1,1);
+
+    --shadow2: 0 0 2px rgba(0;0;0;0.12); 0 1px 2px rgba(0;0;0;0.14);
+    --shadow4: 0 0 2px rgba(0;0;0;0.12); 0 2px 4px rgba(0;0;0;0.14);
+    --shadow8: 0 0 2px rgba(0;0;0;0.12); 0 4px 8px rgba(0;0;0;0.14);
+    --shadow16: 0 0 2px rgba(0;0;0;0.12); 0 8px 16px rgba(0;0;0;0.14);
+    --shadow28: 0 0 8px rgba(0;0;0;0.12); 0 14px 28px rgba(0;0;0;0.14);
+    --shadow64: 0 0 8px rgba(0;0;0;0.12); 0 32px 64px rgba(0;0;0;0.14);
+
+
   }
 `;
 export const GlobalStyles = createGlobalStyle`
@@ -97,28 +108,31 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
   h1{
-    font-size:var(--font-xl);
+    font-size:var(--font-xxl);
+    font-weight:400;
   }
   h2{
     font-size:var(--font-lg);
+    font-weight:400;
   }
   h3{
     font-size:var(--font-md);
+    font-weight:700;
   }
   p{
     font-size:var(--font-sm);
+    font-weight:300;
   }
   a{
-    color:$blue;
+    color: ${({ theme }) => theme.colorLinkRest};
     text-decoration: none;
-  }
-  p>a{
-    box-shadow: inset 0 -0.0625em 0 0 var(--text-primary);
-  }
-  .inverse p>a,
-  p>a.invert{
-    color:var(--text-secondary);
-    box-shadow: inset 0 -0.0625em 0 0 var(--text-secondary);
+    outline:none;
+    transition: all var(--curveAccelerateMax) var(--durationNormal);
+    &:hover, &:focus{
+      color: ${({ theme }) => theme.colorLinkHover};
+      text-decoration: none;
+      outline:none;
+    }
   }
   pre{
     white-space: pre-wrap;
@@ -127,8 +141,11 @@ export const GlobalStyles = createGlobalStyle`
   .button{
     display: inline-block;
     padding:4px;
-    color:white;
-    background:$blue;
+    color: ${({ theme }) => theme.colorTextInverted1};
+    background: ${({ theme }) => theme.colorLinkRest};
+    &:hover{
+      background: ${({ theme }) => theme.colorLinkHover};
+    }
   }
   .u-gutters{
     padding-left: $universal-gutter;

@@ -11,34 +11,23 @@ const LinkStyled = styled(Link)`
   flex-direction: column;
   overflow:hidden;
   height:100%;
-  &:hover,&:focus{
+  &:hover, &:focus{
     outline:none;
     cursor: pointer;
-    border-color:var(--theme-color-primary);
+    color: ${({ theme }) => theme.colorLinkHover};
+    border-color: ${({ theme }) => theme.colorLinkHover};
     figure{
-      border-color:var(--theme-color-primary);
-      background:var(--theme-color-primary);
+      border-color: ${({ theme }) => theme.colorLinkHover};
+      background: ${({ theme }) => theme.colorLinkHover};
     }
     .title,.link{
-      border-bottom:2px solid var(--theme-color-primary)
+      border-bottom:2px solid ${({ theme }) => theme.colorLinkHover};
     }
-    .title,.body{
-      color:var(--theme-color-primary);
-    }
-  }
-  &:visited{
-    border-color:var(--theme-color-secondary);
-    figure{
-      border-color:var(--theme-color-secondary);
-      background:var(--theme-color-secondary);
-    }
-    .title,.link{
-      border-bottom:2px solid var(--theme-color-secondary)
-    }
-    .title,.body{
-      color:var(--theme-color-secondary);
+    .title, .body{
+      color: ${({ theme }) => theme.colorLinkHover};
     }
   }
+  
 `
 const Figure = styled.figure`
   position: relative;
@@ -93,17 +82,17 @@ const LinkText = styled.span`
 const CoverImage = (props) => {
     return (
       <Figure>
-        <img src={props.thumbnail} />
+        <img src={props.cover} />
         <figcaption>{props.caption}</figcaption>
       </Figure>
     )
 }
 
 const ProjectCard = (props) => {
-    const {title, slug, role, thumbnail, client, description} = props.frontmatter;
+    const {title, slug, client, cover, description} = props.hit;
     return (
       <LinkStyled to={'/projects/'+slug}>
-        <CoverImage thumbnail={thumbnail} caption={client} />
+        <CoverImage cover={cover} caption={client} />
         <Header>
           <h3>{title}</h3>
         </Header>

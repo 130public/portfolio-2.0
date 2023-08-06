@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub, faMedium } from "@fortawesome/free-brands-svg-icons";
 
 const List = styled.ul`
+  display:inline-block;
   margin:var(--gutter-md) 0 0;
   padding:0;
   li{
@@ -15,6 +16,8 @@ const List = styled.ul`
       display: inline-block;
       color:var(--text-secondary);
       padding-bottom:var(--gutter-xs);
+      text-decoration:none;
+      box-shadow: none;
       outline:none;
       svg{
         height:var(--font-lg);
@@ -28,7 +31,7 @@ const List = styled.ul`
           transition:all 250ms;
           transform: scale(1.1);
         }
-        box-shadow: inset 0 var(--shadow-weight) 0 0 var(--text-secondary);
+        box-shadow: none;
       }
     }
   }

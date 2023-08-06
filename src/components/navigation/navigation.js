@@ -60,18 +60,19 @@ const Item = styled.li`
 `
 const NavLink = styled(Link)`
   display:inline-block;
-  color: var(--text-color-primary);
+  color: ${({ theme }) => theme.colorText1};
   text-decoration: none;
-  font-family:var(--theme-font-secondary);
+  font-family: var(--theme-font-secondary);
   font-weight:700;
   text-transform:uppercase;
   height: 1.125rem;
+  box-shadow: none;
   &:hover,&:focus{
     outline: none;
-    color: var(--link-primary);
-    box-shadow: inset 0 var(--shadow-weight) 0 0 var(--link-primary);
+    color: ${({ theme }) => theme.colorText1};
+    box-shadow: inset 0 var(--shadow-weight) 0 0 ${({ theme }) => theme.colorLinkHover};
     svg{
-      color:var(--link-primary);
+      color: ${({ theme }) => theme.colorLinkHover};
     }
   }
   svg{

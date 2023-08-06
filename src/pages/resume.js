@@ -12,7 +12,7 @@ import Hero from "../components/hero";
 const WorkItem = styled.div`
   margin:0;
   padding:24px 0 24px;
-  border-bottom:1px solid #CCCCCC;
+  border-top: solid 1px ${( {theme} ) => theme.neutralStroke2};
   h3,p{
     margin:0;
     padding:0;
@@ -21,7 +21,7 @@ const WorkItem = styled.div`
     border:0;
   }
   time{
-    font-style: italic;
+    color: ${( {theme} ) => theme.colorForeground1};
   }
 `;
 
@@ -34,16 +34,30 @@ const ResumePage = (props) => {
         title={data.contentfulPage.metaTitle}
         description={data.contentfulPage.metaDescription}
       />
-      <Hero className="fun" title="Jason J. Geiger" body={data.contentfulPage.body.body} style="default">
-        <p><i>Portfolio available by request.</i></p>
-        <a href="/assets/jasonjgeiger-resume.pdf" target="_blank">Download PDF resume</a>
+      <Hero className="fun" title="Resumé and experience" body={data.contentfulPage.body.body} className="default">
+        <p><a href="/assets/jasonjgeiger-resume.pdf">Download PDF resume</a></p>
       </Hero>
       <Main>
           <article>
             <h2>Work History</h2>
             <WorkItem>
-              <h3>Microsoft - Senior User Experience Designer</h3>
-              <time>October 2016 - Present</time>
+              <h3>Microsoft - Principal Designer - Windows Design</h3>
+              <time>July 2023 - Present</time>
+              <p>Designing the future of the Windows 11 operating system.</p>
+            </WorkItem>
+            <WorkItem>
+              <h3>Microsoft - Principal Designer - Microsoft Education</h3>
+              <time>July 2022 - June 2023</time>
+              <p>Designing education learning tools - focused on strategy, planning, research, art direction, and product design.</p>
+            </WorkItem>
+            <WorkItem>
+              <h3>Microsoft - Principal Design Lead - Career Coach, Microsoft Teams app</h3>
+              <time>August 2019 - September 2022</time>
+              <p>Lead designer responsible for design strategy & product design for Microsoft Career Coach. Have worked to implement design processes that prioritize ethical AI and accessibility through iterative design, usability testing, and engineering collaboration.</p>
+            </WorkItem>
+            <WorkItem>
+              <h3>Microsoft - Senior UX Design Lead - Microsoft Certifications</h3>
+              <time>October 2016 - July 2019</time>
               <p>UX designer with Worldwide Learning, creating innovative learning solutions that empower people to gain influential skills for the 21st century job force.</p>
             </WorkItem>
 						<WorkItem>

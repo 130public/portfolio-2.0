@@ -4,54 +4,60 @@ import Markdown from "../markdown";
 
 const HeroStyled = styled.div`
   position:relative;
-  padding-top:var(--gutter-sm);
-  padding-right:var(--gutter-md);
+  padding-top:var(--gutter-lg);
+  padding-right:var(--gutter-xl);
   padding-bottom:var(--gutter-lg);
-  padding-left:var(--gutter-md);
+  padding-left:var(--gutter-xl);
+
+  h1{
+    margin:0 0 var(--gutter-sm);
+    font-size:var(--font-xl);
+    font-weight:400;
+  }
+  p{
+    margin:0 0 var(--gutter-sm);
+    font-size:var(--font-md);
+    &.bio{
+      font-size:var(--font-lg);
+    }
+  }
+
+  
+
   &.default{
-    color:white;
-    background: ${({ theme }) => theme.themeColorPrimary};
-    a{
-      color: ${({ theme }) => theme.textSecondary};
-      text-decoration: underline;
+    color: ${({ theme }) => theme.colorTextInverted1};
+    border-bottom: solid var(--border-weight) ${( {theme} ) => theme.colorBackground1};
+    background-image:linear-gradient(145deg, ${( {theme} ) => theme.neutralBackgroundInverted1}, ${( {theme} ) => theme.neutralBackgroundInverted2}); 
+
+    h1>a, p>a{
+      color: ${({ theme }) => theme.colorTextInverted1};
+      text-decoration: none;
+      box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.neutralForeground2};
+      &:hover,&:focus{
+        color: ${({ theme }) => theme.colorTextInverted1};
+        box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.colorForeground1};
+      }
     }
   }
   &.project{
-    margin:0;
-    padding:0 var(--gutter-md);
-    .body{
-      padding-right:var(--gutter-md);
-      padding-bottom:var(--gutter-sm);
-      padding-left:var(--gutter-md);
-    }
-  }
-  &.invert{
-    color: ${( {theme} ) => theme.textPrimary};
-    a{
-      color: ${( {theme} ) => theme.textSecondary};
-      text-decoration: underline;
-    }
-    padding-right:var(--gutter-md);
-    padding-left:var(--gutter-md);
+    
   }
   &.fun{
-      color:white;
-      background-image:linear-gradient(145deg, ${( {theme} ) => theme.themeColorPrimary}, ${( {theme} ) => theme.themeColorSecondary});
-      a {
-        color: ${( {theme} ) => theme.textSecondary};
-        box-shadow: inset 0 var(--shadow-weight) 0 0 ${( {theme} ) => theme.linkPrimary};
+      color: ${({ theme }) => theme.colorTextInverted1};
+      background-image:linear-gradient(145deg, ${( {theme} ) => theme.colorBackground1}, ${( {theme} ) => theme.colorBackground2});   
+
+      h1>a, p>a{
+        color: ${({ theme }) => theme.colorTextInverted1};
+        text-decoration: none;
+        box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.neutralForeground2};
         &:hover,&:focus{
-          box-shadow: inset 0 var(--shadow-weight) 0 0 ${( {theme} ) => theme.textSecondary};
+          color: ${({ theme }) => theme.colorTextInverted1};
+          box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.neutralForeground1};
         }
       }
   }
   &.blank{
-      color: ${( {theme} ) => theme.textPrimary};
-  }
-  h1{}
-  p{
-    margin:0;
-    font-size:var(--font-md);
+      color: ${( {theme} ) => theme.colorText};
   }
 `
 const CoverStyled = styled.figure`

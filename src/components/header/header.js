@@ -8,9 +8,9 @@ import Navigation from "../navigation";
 const HeaderStyled = styled.header`
   position: relative;
   padding-top:var(--gutter-md);
-  padding-right:var(--gutter-md);
+  padding-right:var(--gutter-xl);
   padding-bottom:calc(var(--gutter-md) * 0.8);
-  padding-left:var(--gutter-md);
+  padding-left:var(--gutter-xl);
   @extend .u-gutters;
   @extend .u-spacers--inside;
   display:flex;
