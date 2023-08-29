@@ -8,10 +8,10 @@ const HashTag = styled(Link)`
   height: var(--font-lg);
   margin-right:var(--gutter-xs);
   padding-bottom:.25rem;
-  color: ${({ theme }) => theme.colorTextInverted1};
+  color: ${({ theme }) => theme.neutralForegroundInverted1};
   text-decoration:none;
-  box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.neutralForeground2};
-  transition: all var(--durationUltraSlow) var(--curveEasyEase);
+  box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.neutralForeground3};
+  transition: all var(--durationFast) var(--curveEasyEase);
   span{
     display:inline-block;
     height: var(--font-lg);

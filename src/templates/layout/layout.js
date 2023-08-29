@@ -17,19 +17,31 @@ const Content = styled.div`
 
 `
 
+const ThemeButton = styled.button`
+  text-indent: -9999px;
+  margin-left: var(--gutter-xs);
+  padding: 0;
+  height: var(--font-sm);
+  width: var(--font-sm);
+  border-radius: var(--font-sm);
+  border: 1px solid ${({ theme }) => theme.neutralForeground1};;
+  box-shadow: -1px 3px 6px rgba(0,0,0,0.3) inset;
+  cursor: pointer;
+`;
+
 const Layout = (props) => {
 
-  const [selectedTheme, setSelectedTheme] = useState(lightTheme);
-  // const HandleThemeChange = (theme) => {
-  //   setSelectedTheme(theme);
-  //   localStorage.setItem("current-theme", JSON.stringify(theme));
-  // };
-  // useEffect(() => {
-  //   const currentTheme = JSON.parse(localStorage.getItem("current-theme"));
-  //   if (currentTheme) {
-  //     setSelectedTheme(currentTheme);
-  //   }
-  // }, []);
+  const [selectedTheme, setSelectedTheme] = useState(darkTheme);
+  const HandleThemeChange = (theme) => {
+    setSelectedTheme(theme);
+    localStorage.setItem("current-theme", JSON.stringify(theme));
+  };
+  useEffect(() => {
+    const currentTheme = JSON.parse(localStorage.getItem("current-theme"));
+    if (currentTheme) {
+      setSelectedTheme(currentTheme);
+    }
+  }, []);
 
   return (
     <ThemeProvider theme={selectedTheme}>
@@ -47,11 +59,12 @@ const Layout = (props) => {
         <Skip href="#main"/>
         <Header/>
         <Content id="main">
-          {/* <button onClick={() => HandleThemeChange(lightTheme)}>lightTheme</button>
-          <button onClick={() => HandleThemeChange(darkTheme)}>darkTheme</button> */}
           {props.children}
         </Content>
-        <Footer />
+        <Footer>
+          <ThemeButton onClick={() => HandleThemeChange(lightTheme)}>lightTheme</ThemeButton>
+          <ThemeButton onClick={() => HandleThemeChange(darkTheme)}>darkTheme</ThemeButton>
+        </Footer>
       </LayoutStyled>
     </ThemeProvider>
   )

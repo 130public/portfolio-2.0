@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, Hits, Configure, SearchBox } from 'react-instantsearch-dom';
 
-import Card from '../card';
+import {ResourceCard} from '../card';
 
 const HitsStyled = styled(Hits)`
   ul{
@@ -54,7 +54,9 @@ const searchClient = algoliasearch(
 
 const Hit = (props) => {
   return (
-      <Card cardType="resource" {...props} hitsPerPage={props.hitsPerPage} />
+    <>  
+      <ResourceCard cardType="resource" {...props} />
+    </>
   );
 }
 
@@ -65,9 +67,13 @@ const Resources = (props) => {
         searchClient={searchClient}
         indexName={"Resource"}
       >
+        {props.showQuery == true &&
+          <>
+            <h2>Results for <u>{props.query}</u></h2>
+          </>
+        }
         {props.enableSearch == true &&
           <>
-            <p>Results for <u>{props.query}</u></p>
             <SearchBoxStyled defaultRefinement={props.query} />
           </>
         }

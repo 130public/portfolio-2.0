@@ -12,10 +12,11 @@ const BrandLink = styled(Link)`
   font-weight:700;
   text-transform:uppercase;
   cursor:pointer;
+  box-shadow:none;
   .left{
-    color: ${({ theme }) => theme.colorTextInverted1};
-    border:var(--border-weight) solid ${({ theme }) => theme.colorText1};
-    background: ${({ theme }) => theme.colorText1};
+    color: ${({ theme }) => theme.neutralForeground1};
+    border:var(--border-weight) solid ${({ theme }) => theme.neutralForeground1};
+    background: ${({ theme }) => theme.neutralBackground2};
     margin-right:0.25rem;
     padding:0 0.25rem;
   }
@@ -24,24 +25,27 @@ const BrandLink = styled(Link)`
   }
   .right{
     padding:0 0.25rem;
-    color: ${({ theme }) => theme.colorText1};
-    border:var(--border-weight) solid ${({ theme }) => theme.colorText1};
-    background: ${({ theme }) => theme.colorTextInverted1};
+    color: ${({ theme }) => theme.neutralForegroundInverted1};
+    border:var(--border-weight) solid ${({ theme }) => theme.neutralBackgroundInverted1};
+    background: ${({ theme }) => theme.neutralBackgroundInverted1};
   }
   .left, .right{
     transition: all var(--durationSlow); var(--curveEasyEase);
   }
   &:hover, &:focus{
     outline:none;
+    box-shadow:none;
     .right{
-      color: ${({ theme }) => theme.colorTextInverted1};
-      background: ${({ theme }) => theme.colorText1};
-      border-color: ${({ theme }) => theme.colorText1};
+      color: ${({ theme }) => theme.neutralForeground1};
+      border-color: ${({ theme }) => theme.neutralForeground1};
+      background: ${({ theme }) => theme.neutralBackground2};
+      
     }
     .left{
-      color: ${({ theme }) => theme.colorText1};
-      background: ${({ theme }) => theme.colorTextInverted1};
-      border-color: ${({ theme }) => theme.colorText1};
+      color: ${({ theme }) => theme.neutralForegroundInverted1};
+      border:var(--border-weight) solid ${({ theme }) => theme.neutralBackgroundInverted1};
+      background: ${({ theme }) => theme.neutralBackgroundInverted1};
+      
     }
   }
 `;

@@ -5,8 +5,9 @@ import {Link} from "gatsby";
 const LinkStyled = styled(Link)`
   margin:0;
   padding:0;
-  color:black;
-  border:2px solid black;
+  color: ${( {theme} ) => theme.neutralForeground1};
+  border:2px solid ${( {theme} ) => theme.neutralStroke1};
+  background: ${( {theme} ) => theme.neutralBackground1};
   display:flex;
   flex-direction: column;
   overflow:hidden;
@@ -16,6 +17,7 @@ const LinkStyled = styled(Link)`
     cursor: pointer;
     color: ${({ theme }) => theme.colorLinkHover};
     border-color: ${({ theme }) => theme.colorLinkHover};
+    background: ${( {theme} ) => theme.neutralBackground2};
     figure{
       border-color: ${({ theme }) => theme.colorLinkHover};
       background: ${({ theme }) => theme.colorLinkHover};
@@ -26,9 +28,9 @@ const LinkStyled = styled(Link)`
     .title, .body{
       color: ${({ theme }) => theme.colorLinkHover};
     }
-  }
-  
+  }  
 `
+
 const Figure = styled.figure`
   position: relative;
   display:inline-block;
@@ -36,9 +38,9 @@ const Figure = styled.figure`
   padding:56.25% 0 0 0;
   width:100%;
   overflow: hidden;
-  border-bottom: 2px solid black;
-  transition:all 500ms;
-  background:var(--theme-color-text);
+  border-bottom: 2px solid  ${( {theme} ) => theme.neutralStroke1};
+  background:  rgba(0,0,0,0.8);
+  transition: all var(--curveDecelerateMid) var(--durationUltraSlow);
   img{
     position: absolute;
     top: 0;
@@ -46,7 +48,7 @@ const Figure = styled.figure`
     bottom: 0;
     right: 0;
     width:100%;
-    transition: all 500ms;
+    transition: all var(--curveDecelerateMid) var(--durationUltraSlow);
     filter: grayscale(100%);
     mix-blend-mode: screen;
   }

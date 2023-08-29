@@ -3,7 +3,12 @@ import ReactMarkdown from "react-markdown";
 
 const Markdown = (props) => {
   return (
-    <ReactMarkdown children={props.value} />
+    <ReactMarkdown 
+      components={{
+        p: ({node, ...props}) => <>{props.children}</>
+      }}
+      children={props.value}
+    />
   )
 }
 export default Markdown

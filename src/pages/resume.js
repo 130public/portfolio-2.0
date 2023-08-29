@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import styled from "styled-components";
 
 import Layout from "../templates/layout";
@@ -7,6 +7,7 @@ import Main from "../templates/main";
 
 import Seo from "../components/seo";
 import Hero from "../components/hero";
+import Cover from "../assets/wallpaper/cover_06.png";
 
 
 const WorkItem = styled.div`
@@ -16,12 +17,15 @@ const WorkItem = styled.div`
   h3,p{
     margin:0;
     padding:0;
+    color: ${( {theme} ) => theme.neutralForeground1};
   }
   &:last-of-type{
     border:0;
   }
   time{
-    color: ${( {theme} ) => theme.colorForeground1};
+    font-size: var(--font-sm);
+    font-weight: 300;
+    color: ${( {theme} ) => theme.neutralForeground2};
   }
 `;
 
@@ -34,8 +38,8 @@ const ResumePage = (props) => {
         title={data.contentfulPage.metaTitle}
         description={data.contentfulPage.metaDescription}
       />
-      <Hero className="fun" title="Resumé and experience" body={data.contentfulPage.body.body} className="default">
-        <p><a href="/assets/jasonjgeiger-resume.pdf">Download PDF resume</a></p>
+      <Hero className="cover" title="Resumé and experience" body={data.contentfulPage.body.body} cover={Cover}>
+        <p><Link to="/assets/jasonjgeiger-resume.pdf" rel="nofollow">Download PDF resume</Link></p>
       </Hero>
       <Main>
           <article>

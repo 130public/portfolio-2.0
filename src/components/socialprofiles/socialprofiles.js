@@ -40,11 +40,11 @@ const List = styled.ul`
 const SocialProfiles = (props) => {
     return (
       <List>
-        <li><a href="https://www.linkedin.com/in/jasonjgeiger/" >
+        <li><a className="social" href="https://www.linkedin.com/in/jasonjgeiger/" >
           <FontAwesomeIcon icon={faLinkedin} size="2x" aria-hidden="true" title="LinkedIn profile" />
           <span className="sr-only">LinkedIn profile</span>
         </a></li>
-        <li><a href="https://github.com/jasonjgeiger">
+        <li><a className="social" href="https://github.com/jasonjgeiger">
           <FontAwesomeIcon icon={faGithub} size="2x" aria-hidden="true" title="GitHub profile" />
           <span className="sr-only">GitHub profile</span>
         </a></li>

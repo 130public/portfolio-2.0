@@ -1,36 +1,84 @@
 import { createGlobalStyle } from 'styled-components';
 
+import GTPressuraLightEOT from "../assets/fonts/gt-pressura/light/gt-pressura-light.eot";
+import GTPressuraLightWoff from "../assets/fonts/gt-pressura/light/gt-pressura-light.woff";
+import GTPressuraLightTTF from "../assets/fonts/gt-pressura/light/gt-pressura-light.ttf";
+
+import GTPressuraRegularEOT from "../assets/fonts/gt-pressura/regular/gt-pressura-regular.eot";
+import GTPressuraRegularWoff from "../assets/fonts/gt-pressura/regular/gt-pressura-regular.woff";
+import GTPressuraRegularTTF from "../assets/fonts/gt-pressura/regular/gt-pressura-regular.ttf";
+
+import GTPressuraBoldEOT from "../assets/fonts/gt-pressura/bold/gt-pressura-bold.eot";
+import GTPressuraBoldWoff from "../assets/fonts/gt-pressura/bold/gt-pressura-bold.woff";
+import GTPressuraBoldTTF from "../assets/fonts/gt-pressura/bold/gt-pressura-bold.ttf";
+
+import GTPressuraMonoLightEOT from "../assets/fonts/gt-pressura-mono/light/gt-pressura-mono-light.eot";
+import GTPressuraMonoLightWoff from "../assets/fonts/gt-pressura-mono/light/gt-pressura-mono-light.woff";
+import GTPressuraMonoLightTTF from "../assets/fonts/gt-pressura-mono/light/gt-pressura-mono-light.ttf";
+
+import GTPressuraMonoRegularEOT from "../assets/fonts/gt-pressura-mono/regular/gt-pressura-mono-regular.eot";
+import GTPressuraMonoRegularWoff from "../assets/fonts/gt-pressura-mono/regular/gt-pressura-mono-regular.woff";
+import GTPressuraMonoRegularTTF from "../assets/fonts/gt-pressura-mono/regular/gt-pressura-mono-regular.ttf";
+
+import GTPressuraMonoBoldEOT from "../assets/fonts/gt-pressura-mono/bold/gt-pressura-mono-bold.eot";
+import GTPressuraMonoBoldWoff from "../assets/fonts/gt-pressura-mono/bold/gt-pressura-mono-bold.woff";
+import GTPressuraMonoBoldTTF from "../assets/fonts/gt-pressura-mono/bold/gt-pressura-mono-bold.ttf";
+
+import SociconEOT from "../assets/fonts/socicon/socicon-webfont.eot";
+import SociconWoff from "../assets/fonts/socicon/socicon-webfont.woff";
+import SociconTTF from "../assets/fonts/socicon/socicon-webfont.ttf";
+import RecoletaRegularTTF from "../assets/fonts/recoleta/recoletaalt-regular.ttf";
+import RecoletaSemiboldTTF from "../assets/fonts/recoleta/recoletaalt-semibold.ttf";
+
 export const GlobalFonts = createGlobalStyle`
   @font-face{
-  font-family:GT Pressura;
-  font-weight:300;
-  src:url(/assets/fonts/gt-pressura/light/gt-pressura-light.eot?) format("eot"),url(/assets/fonts/gt-pressura/light/gt-pressura-light.woff) format("woff"),url(/assets/fonts/gt-pressura/light/gt-pressura-light.ttf) format("truetype")}
+    font-family:GT Pressura;
+    font-weight:300;
+    src:url(${GTPressuraLightEOT}?) format("eot"),url(${GTPressuraLightWoff}) format("woff"),url(${GTPressuraLightTTF}) format("truetype")
+  }
   @font-face{
     font-family:GT Pressura;
     font-weight:400;
-    src:url(/assets/fonts/gt-pressura/regular/gt-pressura-regular.eot?) format("eot"),url(/assets/fonts/gt-pressura/regular/gt-pressura-regular.woff) format("woff"),url(/assets/fonts/gt-pressura/regular/gt-pressura-regular.ttf) format("truetype")}
+    src:url(${GTPressuraRegularEOT}?) format("eot"),url(${GTPressuraRegularWoff}) format("woff"),url(${GTPressuraRegularTTF}) format("truetype")
+  }
   @font-face{
     font-family:GT Pressura;
     font-weight:700;
-    src:url(/assets/fonts/gt-pressura/bold/gt-pressura-bold.eot?) format("eot"),url(/assets/fonts/gt-pressura/bold/gt-pressura-bold.woff) format("woff"),url(/assets/fonts/gt-pressura/bold/gt-pressura-bold.ttf) format("truetype")}
+    src:url(${GTPressuraBoldEOT}?) format("eot"),url(${GTPressuraBoldWoff}) format("woff"),url(${GTPressuraBoldTTF}) format("truetype")
+  }
   @font-face{
-  font-family:GT Pressura Mono;
-  font-weight:300;
-  src:url(/assets/fonts/gt-pressura-mono/light/gt-pressura-mono-light.eot?) format("eot"),url(/assets/fonts/gt-pressura-mono/light/gt-pressura-mono-light.woff) format("woff"),url(/assets/fonts/gt-pressura-mono/light/gt-pressura-mono-light.ttf) format("truetype")}
+    font-family:GT Pressura Mono;
+    font-weight:300;
+    src:url(${GTPressuraMonoLightEOT}?) format("eot"),url(${GTPressuraMonoLightWoff}) format("woff"),url(${GTPressuraMonoLightTTF}) format("truetype")
+  }
   @font-face{
-  font-family:GT Pressura Mono;
-  font-weight:400;
-  src:url(/assets/fonts/gt-pressura-mono/regular/gt-pressura-mono-regular.eot?) format("eot"),url(/assets/fonts/gt-pressura-mono/regular/gt-pressura-mono-regular.woff) format("woff"),url(/assets/fonts/gt-pressura-mono/regular/gt-pressura-mono-regular.ttf) format("truetype")}
+    font-family:GT Pressura Mono;
+    font-weight:400;
+    src:url(${GTPressuraMonoRegularEOT}?) format("eot"),url(${GTPressuraMonoRegularWoff}) format("woff"),url(${GTPressuraMonoRegularTTF}) format("truetype")
+  }
   @font-face{
-  font-family:GT Pressura Mono;
-  font-weight:700;
-  src:url(/assets/fonts/gt-pressura-mono/bold/gt-pressura-mono-bold.eot?) format("eot"),url(/assets/fonts/gt-pressura-mono/bold/gt-pressura-mono-bold.woff) format("woff"),url(/assets/fonts/gt-pressura-mono/bold/gt-pressura-mono-bold.ttf) format("truetype")}
+    font-family:GT Pressura Mono;
+    font-weight:700;
+    src:url(${GTPressuraMonoBoldEOT}?) format("eot"),url(${GTPressuraMonoBoldWoff}) format("woff"),url(${GTPressuraMonoBoldTTF}) format("truetype")
+  }
   @font-face{
-  font-family:socicon;
-  src:url(/assets/fonts/socicon/socicon-webfont.eot);
-  src:url(/assets/fonts/socicon/socicon-webfont.eot?#iefix) format("embedded-opentype"),url(/assets/fonts/socicon/socicon-webfont.woff) format("woff"),url(/assets/fonts/socicon/socicon-webfont.ttf) format("truetype"),url(/assets/fonts/socicon/socicon-webfont.svg#scrawlregular) format("svg");
-  font-weight:400;
-  font-style:normal}
+    font-family:Recoleta Regular;
+    src:url(${RecoletaRegularTTF}) format("truetype");
+    font-weight:400;
+    font-style:normal
+  }
+  @font-face{
+    font-family:Recoleta Semibold;
+    src:url(${RecoletaSemiboldTTF}) format("truetype");
+    font-weight:400;
+    font-style:normal
+  }
+  @font-face{
+    font-family:socicon;
+    src:url(${SociconEOT}?) format("eot"),url(${SociconWoff}) format("woff"),url(${SociconTTF}) format("truetype");
+    font-weight:400;
+    font-style:normal
+  }
 `;
 export const GlobalVars = createGlobalStyle`
   :root {
@@ -55,17 +103,18 @@ export const GlobalVars = createGlobalStyle`
     --gutter-md:2rem;
     --gutter-lg:4rem;
     --gutter-xl:6rem;
+    --gutter-xxl:12rem;
 
     --underline-weight: -0.0625em;
     --shadow-weight: -0.110rem;
     --border-weight: 0.125rem;
 
     --borderRadiusNone: 0;
-    --borderRadiusSmall: 2px;
-    --borderRadiusMedium: 4px;
-    --borderRadiusLarge: 6px;
-    --borderRadiusXLarge: 8px;
-    --borderRadiusCircular: 10000px;
+    --borderRadius-xs: 2px;
+    --borderRadius-sm: 4px;
+    --borderRadius-md: 6px;
+    --borderRadius-lg: 8px;
+    --borderRadius-xl: 10000px;
 
     --durationUltraFast: 50ms;
     --durationFaster: 100ms;
@@ -73,7 +122,7 @@ export const GlobalVars = createGlobalStyle`
     --durationNormal: 200ms;
     --durationSlow: 300ms;
     --durationSlower: 400ms;
-    --durationUltraSlow: 500ms;
+    --durationUltraSlow: 1500ms;
 
     --curveAccelerateMax: cubic-bezier(1,0,1,1);
     --curveAccelerateMid: cubic-bezier(0.7,0,1,0.5);
@@ -100,7 +149,8 @@ export const GlobalStyles = createGlobalStyle`
   body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background: ${({ theme }) => theme.themeBackgroundColor};
+    color: ${( {theme} ) => theme.neutralForeground1};
+    background: ${({ theme }) => theme.neutralBackground1};
   }
   @media screen and (min-width: --screen-lg){
     .app,body{
@@ -125,13 +175,16 @@ export const GlobalStyles = createGlobalStyle`
   }
   a{
     color: ${({ theme }) => theme.colorLinkRest};
+    color: ${( {theme} ) => theme.neutralForeground1};
     text-decoration: none;
     outline:none;
-    transition: all var(--curveAccelerateMax) var(--durationNormal);
+    transition: all var(--curveAccelerateMax) var(--durationFast);
+    box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.neutralForeground2};
     &:hover, &:focus{
-      color: ${({ theme }) => theme.colorLinkHover};
+      color: ${({ theme }) => theme.colorLinkRest};
       text-decoration: none;
       outline:none;
+      box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.colorLinkHover};
     }
   }
   pre{
@@ -140,10 +193,12 @@ export const GlobalStyles = createGlobalStyle`
   }
   .button{
     display: inline-block;
-    padding:4px;
-    color: ${({ theme }) => theme.colorTextInverted1};
+    padding:var(--gutter-xs) var(--gutter-sm);
+    border-radius: var(--borderRadius-md);
+    color: ${({ theme }) => theme.neutralForegroundInverted1};
     background: ${({ theme }) => theme.colorLinkRest};
     &:hover{
+      color: ${({ theme }) => theme.neutralForegroundInverted1};
       background: ${({ theme }) => theme.colorLinkHover};
     }
   }

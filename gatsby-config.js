@@ -76,7 +76,10 @@ module.exports = {
         appId: `${process.env.ALGOLIA_APPID}`,
         apiKey: `${process.env.ALGOLIA_APIKEY}`,
         //indexName: process.env.ALGOLIA_INDEXNAME, // for all queries
-        queries,
+        queries, // from /src/utilities/algolia
+        mergeSettings: true, // preserve settings changes made on the Algolia website.
+        concurrentQueries: true,
+        continueOnFailure: true,
         chunkSize: 100000, // default: 1000
       },
     },

@@ -6,6 +6,7 @@ import Main from "../templates/main"
 import Hero from "../components/hero"
 import Grid from "../components/Grid"
 import {ProjectCard} from "../components/card";
+import Cover from "../assets/wallpaper/cover_06.png";
 
 const Project = (props) => {
   const {slug,title,description,cover,client} = props.node.frontmatter;
@@ -23,7 +24,7 @@ const ProjectPage = (props) => {
   ))
   return (
     <Layout location={props.location}>
-      <Hero className="default" title="Projects" body=""/>
+      <Hero className="cover" cover={Cover} title="Projects" body="**A currarted set of non-NDA projects.** Many of these projects have additional assets that can't be shared publicly, if you're interested in a more in-depth look, [message me](https://www.linkedin.com/in/jasonjgeiger')."/>
       <Main>
         <Grid hitsPerPage={Object.keys(items).length} colWidth="20%">
           {items}

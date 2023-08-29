@@ -1,27 +1,56 @@
 //QUERIES FOR ALGOLIA
 const PageIndexQuery = `{
-  allSite {
-    edges{
-      node{
+  allSitePage {
+    edges {
+      node {
         id
         internal {
-          type
           contentDigest
-          owner
-        }
-        siteMetadata{
-          title
-          url
+          type
+          description
         }
       }
     }
   }
 }`
+
+const ProjectIndexQuery = `{
+  allMarkdownRemark(filter: {frontmatter: {type: {eq: "project"}}}) {
+    edges {
+      node {
+        id
+        internal {
+          contentDigest
+          type
+          owner
+        }
+        frontmatter {
+          title
+          description
+          cover
+          date
+          role
+          slug
+          client
+        }
+        excerpt(pruneLength: 5000)
+      }
+    }
+  }
+}`
+
 const ResourceIndexQuery = `{
   allContentfulResource {
     edges {
       node {
         id
+        internal {
+          contentDigest
+          type
+          owner
+        }
+        updatedAt
+        createdAt
         title
         description
         author
@@ -39,41 +68,22 @@ const ResourceIndexQuery = `{
             name
           }
         }
-        updatedAt
-        createdAt
       }
     }
   }
 }`
-// const ProjectIndexQuery = `{
-//   allContentfulProject {
-//     edges {
-//         node {
-//           id
-//           title
-//           slug
-//           description{
-//             description
-//           }
-//           thumbnail{
-//             title
-//             description
-//           }
-//           body{
-//             body
-//           }
-//         }
-//     }
-//   }
-// }`
 
+//PROCESS FOR ALGOLIA
 const flatten = arr =>
-  arr.map(({ node: { frontmatter, ...rest } }) => ({
-    ...frontmatter,
+  arr.map(({ node: { id, internal, frontmatter, ...rest } }) => ({
+    objectID: id,
+    internal,
+    frontmatter,
     ...rest,
   }))
 const settings = { attributesToSnippet: [`excerpt:20`] }
 
+//INDICES FOR ALGOLIA
 const queries = [
   {
     query: PageIndexQuery,
@@ -82,17 +92,17 @@ const queries = [
     settings,
   },
   {
+    query: ProjectIndexQuery,
+    transformer: ({ data }) => flatten(data.allMarkdownRemark.edges),
+    indexName: `Project`,
+    settings,
+  },
+  {
     query: ResourceIndexQuery,
     transformer: ({ data }) => flatten(data.allContentfulResource.edges),
     indexName: `Resource`,
     settings,
-  },
-  // {
-  //   query: ProjectIndexQuery,
-  //   transformer: ({ data }) => flatten(data.allContentfulProject.edges),
-  //   indexName: `Project`,
-  //   settings,
-  // }
+  }
 ]
 
 module.exports = queries

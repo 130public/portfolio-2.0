@@ -60,7 +60,7 @@ const Item = styled.li`
 `
 const NavLink = styled(Link)`
   display:inline-block;
-  color: ${({ theme }) => theme.colorText1};
+  color: ${({ theme }) => theme.neutralForeground1};
   text-decoration: none;
   font-family: var(--theme-font-secondary);
   font-weight:700;
@@ -69,7 +69,7 @@ const NavLink = styled(Link)`
   box-shadow: none;
   &:hover,&:focus{
     outline: none;
-    color: ${({ theme }) => theme.colorText1};
+    color: ${({ theme }) => theme.neutralForeground1};
     box-shadow: inset 0 var(--shadow-weight) 0 0 ${({ theme }) => theme.colorLinkHover};
     svg{
       color: ${({ theme }) => theme.colorLinkHover};

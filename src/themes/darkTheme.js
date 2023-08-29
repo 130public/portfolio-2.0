@@ -1,13 +1,33 @@
 //https://blog.logrocket.com/build-react-theme-switcher-app-styled-components/
 const darkTheme = {
-    themeColorPrimary: '#227bf9',
-    themeColorSecondary: '#6219ee',
-    themeColorTertiary: '#666666',
-    themeColorText: '#f1f1f1',
-    themeBackgroundColor: '#010101',
-    linkPrimary: '#227bf9',
-    linkSecondary: '#6219ee',
-    textPrimary: '#ffffff',
-    textSecondary: '#f1f1f1'
-}
+    colorBrandForeground1: '#227bf9',
+    colorBrandForeground2: '#6219ee',
+    colorBrandBackground1: 'rgba(5,45,105,0.85)',
+    colorBrandBackground2: 'rgba(30,0,90,0.85)',
+    //
+    neutralForeground1: 'rgba(255, 255, 255, 0.9)',
+    neutralForeground2: 'rgba(255, 255, 255, 0.75)',
+    neutralForeground3: 'rgba(255, 255, 255, 0.25)',
+    neutralForeground1OnBrand: 'rgba(255, 255, 255, 0.9)',
+    neutralForeground2OnBrand: 'rgba(255, 255, 255, 0.75)',
+    neutralForeground3OnBrand: 'rgba(255, 255, 255, 0.25)',
+    neutralForegroundInverted1: '#010101',
+    neutralForegroundInverted2: '#212121',
+    //
+    neutralBackground1: 'rgba(10, 10, 50, 1.0)',
+    neutralBackground2: 'rgba(0, 5, 20, 1.0)',
+    neutralBackgroundInverted1: 'rgba(220, 220, 210, 1.0)',
+    neutralBackgroundInverted2: 'rgba(245, 245, 245, 1.0)',
+    //
+    neutralStroke1: 'rgba(200, 200, 200, 0.1)',
+    neutralStroke2: 'rgba(100, 100, 100, 0.5)',
+    neutralStrokeInverted: 'rgba(0, 0, 0, 0.4)',
+    //
+    colorLinkRest: '#FFFFFF',
+    colorLinkHover: '#227bf9',
+    colorLinkRestOnBrand:'rgba(255, 255, 255, 0.7)',
+    colorLinkHoverOnBrand:'rgba(34,123,249,0.85)',
+    colorLinkRestInverted: 'rgba(255, 255, 255, 0.9)',
+    colorLinkHoverInverted: 'rgba(255, 255, 255, 0.75)',
+};
 export default darkTheme;

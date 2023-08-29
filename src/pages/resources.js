@@ -7,6 +7,7 @@ import Main from "../templates/main";
 import Seo from "../components/seo";
 import Hero from "../components/hero";
 import Resources from "../components/resources";
+import Cover from "../assets/wallpaper/cover_06.png";
 
 // markup
 const ResourcesPage = (props) => {
@@ -17,10 +18,10 @@ const ResourcesPage = (props) => {
         title={data.contentfulPage.metaTitle}
         description={data.contentfulPage.metaDescription}
       />
-      <Hero className="fun" title={data.contentfulPage.title} body={data.contentfulPage.body.body} />
+      <Hero className="cover" cover={Cover} title={data.contentfulPage.title} body={data.contentfulPage.body.body} />
       <Main>
         <h2>Recently read, watched, or listened</h2>
-        <Resources enableSearch={false} hitsPerPage={1000} colWidth="25%" />
+        <Resources enableSearch={false} hitsPerPage={1000} colWidth="320px" />
       </Main>
     </Layout>
   )
