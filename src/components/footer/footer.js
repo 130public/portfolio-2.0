@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Brand from "../Brand";
+import Brand from "../brand";
 
 const FooterStyled = styled.footer`
   display:flex;

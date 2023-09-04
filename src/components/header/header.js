@@ -1,7 +1,7 @@
 import * as React from "react"
 import styled from "styled-components";
 
-import Brand from "../Brand";
+import Brand from "../brand";
 import Navigation from "../navigation";
 
 // styles
