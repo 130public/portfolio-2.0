@@ -82,7 +82,7 @@ const Layout = (props) => {
       />
       <LayoutStyled location={props.location}>
         <Skip href="#main"/>
-        <Draft>This is a draft of Portfolio 2.0 <b>/</b> Live portfolio can be found at <a href="https://130public.net">https://130public.net</a></Draft>
+        <Draft>Draft of Portfolio 2.0<br/>Live portfolio @ <a href="https://130public.net">https://130public.net</a></Draft>
         <Header/>
         <Content id="main">
           {props.children}
