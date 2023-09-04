@@ -31,6 +31,14 @@ const DarkThemeButton = styled(ThemeButton)`
   background: var(--theme-dark-swatch);
 `;
 
+const Draft = styled.div`
+  text-align:center;
+  color: white;
+  background:red;
+  font-size: var(--font-xs);
+  padding: var(--font-xs) 0;
+`
+
 
 const Layout = (props) => {
   var preferredTheme = lightTheme;
@@ -59,7 +67,7 @@ const Layout = (props) => {
       <GlobalVars />
       <GlobalStyles />
       <Seo
-        title="Layout"
+        title="130PULBIC | The portfolio of Jason Geiger"
         description=""
         image=""
         pathname=""
@@ -67,6 +75,7 @@ const Layout = (props) => {
       />
       <LayoutStyled location={props.location}>
         <Skip href="#main"/>
+        <Draft>Thisis a draft of Portfolio 2.0 Live portfolio can be found at<a href="https://130public.net">https://130public.net</a></Draft>
         <Header/>
         <Content id="main">
           {props.children}
