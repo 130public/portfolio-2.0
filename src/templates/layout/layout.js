@@ -32,11 +32,12 @@ const DarkThemeButton = styled(ThemeButton)`
 `;
 
 const Draft = styled.div`
-  text-align:center;
+  text-align: center;
   color: white;
-  background:red;
-  font-size: var(--font-xs);
-  padding: var(--font-xs) 0;
+  background: red;
+  font-size: var(--font-sm);
+  padding: var(--gutter-md) 0 0;
+  line-height: var(--font-xl);
 `
 
 
@@ -75,7 +76,7 @@ const Layout = (props) => {
       />
       <LayoutStyled location={props.location}>
         <Skip href="#main"/>
-        <Draft>Thisis a draft of Portfolio 2.0 Live portfolio can be found at<a href="https://130public.net">https://130public.net</a></Draft>
+        <Draft>This is a draft of Portfolio 2.0 <b>/</b> Live portfolio can be found at <a href="https://130public.net">https://130public.net</a></Draft>
         <Header/>
         <Content id="main">
           {props.children}
