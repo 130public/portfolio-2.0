@@ -4,7 +4,7 @@ require('dotenv').config({path: `./.env.${env}`});
 /**
 ALGOLIA
 **/
-const queries = require('./src/utilities/algolia.js')
+const queries = require('./src/utilities/algolia')
 
 /**
 CONTENTFUL
