@@ -3,21 +3,37 @@ import styled from "styled-components";
 import Brand from "../Brand";
 
 const FooterStyled = styled.footer`
-  padding-top:var(--gutter-md);
-  padding-right:var(--gutter-xl);
-  padding-bottom:var(--gutter-md);
-  padding-left:var(--gutter-xl);
+  display:flex;
   @extend .u-gutters;
   @extend .u-spacers--inside;
-  border-top:2px solid var(--text-primary);
+  padding-top:var(--gutter-md);
+  padding-right:var(--gutter-sm);
+  padding-bottom:var(--gutter-md);
+  padding-left:var(--gutter-sm);
   
+  @media (min-width: 32rem){
+    padding-left:var(--gutter-md);
+    padding-right:var(--gutter-md);
+  }
+  @media (min-width: 64rem){
+    padding-left:var(--gutter-xl);
+    padding-right:var(--gutter-xl);
+  }
+  > div {
+    flex: 1 1 50%;
+  }
+  div:last-child{
+    text-align:right;
+  }
 `
 
 const Footer = (props) => {
   return(
     <FooterStyled>
       <Brand left="THE" right="END" to="/colophon" />
-      {props.children}
+      <div>
+        {props.children}
+      </div>
     </FooterStyled>
   )
 }

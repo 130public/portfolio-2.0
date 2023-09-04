@@ -1,9 +1,10 @@
 //https://blog.logrocket.com/build-react-theme-switcher-app-styled-components/
 const darkTheme = {
+    theme:'DARK',
     colorBrandForeground1: '#227bf9',
     colorBrandForeground2: '#6219ee',
-    colorBrandBackground1: 'rgba(5,45,105,0.85)',
-    colorBrandBackground2: 'rgba(30,0,90,0.85)',
+    colorBrandBackground1: 'rgba(59, 6, 64, 1.0)',
+    colorBrandBackground2: 'rgba(0, 2, 90, 1.0)',
     //
     neutralForeground1: 'rgba(255, 255, 255, 0.9)',
     neutralForeground2: 'rgba(255, 255, 255, 0.75)',

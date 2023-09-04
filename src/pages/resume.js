@@ -3,11 +3,10 @@ import { graphql, Link } from "gatsby";
 import styled from "styled-components";
 
 import Layout from "../templates/layout";
-import Main from "../templates/main";
+import Main from "../components/main";
 
 import Seo from "../components/seo";
 import Hero from "../components/hero";
-import Cover from "../assets/wallpaper/cover_06.png";
 
 
 const WorkItem = styled.div`
@@ -38,7 +37,7 @@ const ResumePage = (props) => {
         title={data.contentfulPage.metaTitle}
         description={data.contentfulPage.metaDescription}
       />
-      <Hero className="cover" title="Resumé and experience" body={data.contentfulPage.body.body} cover={Cover}>
+      <Hero className="fun" title="Resumé and experience" body={data.contentfulPage.body.body}>
         <p><Link to="/assets/jasonjgeiger-resume.pdf" rel="nofollow">Download PDF resume</Link></p>
       </Hero>
       <Main>

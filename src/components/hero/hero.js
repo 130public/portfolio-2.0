@@ -4,31 +4,45 @@ import Markdown from "../markdown";
 
 const HeroStyled = styled.div`
   position:relative;
-  padding-top:var(--gutter-lg);
-  padding-right:var(--gutter-xxl);
-  padding-bottom:var(--gutter-lg);
-  padding-left:var(--gutter-xxl);
   overflow:hidden;
+  padding-top:var(--gutter-md);
+  padding-right:var(--gutter-sm);
+  padding-bottom:var(--gutter-sm);
+  padding-left:var(--gutter-sm);
+  @media (min-width: 32rem){
+    padding-left:var(--gutter-md);
+    padding-right:var(--gutter-md);
+  }
+  @media (min-width: 64rem){
+    padding-top:var(--gutter-lg);
+    padding-right:var(--gutter-xl);
+    padding-bottom:var(--gutter-lg);
+    padding-left:var(--gutter-xl);
+  }
   h1{
     margin:0 0 var(--gutter-sm);
-    font-size:var(--font-xl);
+    font-size:var(--font-lg);
     font-weight:400;
+    @media (min-width: 32rem){
+      font-size:var(--font-xl);
+    }
   }
   p{
     margin:0 0 var(--gutter-sm);
     font-size:var(--font-md);
+    font-weight:400;
+    strong,b{
+      font-weight:700;
+    }
     &.bio{
       font-size:var(--font-lg);
     }
   }
 
   &.default{
-    color: ${({ theme }) => theme.neutralForeground1OnBrand};
-    border-bottom: solid var(--border-weight) ${( {theme} ) => theme.colorBrandBackground1};
-    background-image:linear-gradient(145deg, ${( {theme} ) => theme.neutralBackgroundInverted1}, ${( {theme} ) => theme.neutralBackgroundInverted2}); 
-
+    color: ${({ theme }) => theme.neutralForeground1};
     h1>a, p>a{
-      color: ${({ theme }) => theme.neutralForeground1OnBrand};
+      color: ${({ theme }) => theme.neutralForeground1};
       text-decoration: none;
       box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.neutralForeground2};
       &:hover,&:focus{
@@ -40,26 +54,28 @@ const HeroStyled = styled.div`
   &.project{
     
   }
-  &.fun{
-      color: ${({ theme }) => theme.neutralForeground1OnBrand};
-      background-image:linear-gradient(145deg, ${( {theme} ) => theme.colorBrandBackground1}, ${( {theme} ) => theme.colorBrandBackground2});   
+  // &.fun{
+  //     color: ${({ theme }) => theme.neutralForeground1OnBrand};
+  //     background-image:linear-gradient(145deg, ${( {theme} ) => theme.colorBrandBackground1}, ${( {theme} ) => theme.colorBrandBackground2});   
 
-      a:not(.button, .social){
-        color: ${({ theme }) => theme.neutralForeground1OnBrand};
-        text-decoration: none;
-        box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.colorLinkHoverOnBrand};
-        &:hover,&:focus{
-          color: ${({ theme }) => theme.neutralForeground1OnBrand};
-          box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.colorLinkHoverOnBrand};
-        }
-      }
-  }
-  &.blank, &.cover{
-      color: ${( {theme} ) => theme.neutralForeground1OnBrand};
-  }
-  &.cover{
-    background-image:linear-gradient(145deg, ${( {theme} ) => theme.colorBrandBackground1}, ${( {theme} ) => theme.colorBrandBackground2}); 
-    border-bottom: solid var(--border-weight) ${( {theme} ) => theme.colorBrandBackground1};
+  //     a:not(.button, .social){
+  //       color: ${({ theme }) => theme.neutralForeground1OnBrand};
+  //       text-decoration: none;
+  //       box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.colorLinkHoverOnBrand};
+  //       &:hover,&:focus{
+  //         color: ${({ theme }) => theme.neutralForeground1OnBrand};
+  //         box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.colorLinkHoverOnBrand};
+  //       }
+  //     }
+  // }
+  // &.blank, &.cover{
+  //     color: ${( {theme} ) => theme.neutralForeground1OnBrand};
+  // }
+  &.fun{
+    color: ${( {theme} ) => theme.neutralForeground1OnBrand};
+    background-image:linear-gradient(145deg, ${( {theme} ) => theme.colorBrandBackground1}, ${( {theme} ) => theme.colorBrandBackground2});
+    border-top: solid var(--border-weight) ${( {theme} ) => theme.colorBrandBackground1};
+    border-bottom: solid var(--border-weight) ${( {theme} ) => theme.colorBrandBackground2};
     a:not(.button, .social){
       color: ${({ theme }) => theme.neutralForeground1OnBrand};
       text-decoration: none;
@@ -78,7 +94,6 @@ const HeroStyled = styled.div`
 `
 const CoverStyled = styled.figure`
   position:absolute;
-  top:0;
   left: 0;
   margin:0;
   padding:0;
@@ -88,14 +103,12 @@ const CoverStyled = styled.figure`
   width: 100%;
   img{
     position: absolute;
-    top:0;
-    left: 0;
     bottom: 0;
     right: 0;
-    width:175vw;
-    height:auto;
-    filter: grayscale(100%);
+    width:auto;
+    height:100%;
     opacity:1.0;
+    object-fit:cover;
   }
   z-index:-1;
 `
@@ -116,12 +129,23 @@ const Cover = (props) => {
 
 
 const Hero = (props) => {
+  const showTitle = (title) => {
+    if(title){
+      return <h1 className="headline"><span>{title}</span></h1>;
+    }
+  }
+  const showBody = (body) => {
+    if(body){
+      return <p className="body"><span><Markdown value={body} /></span></p>;
+    }
+  }
+
   return (
     <HeroStyled className={props.className}>
       <Cover image={props.cover} />
       <div className="body">
-        <h1 className="headline"><span>{props.title}</span></h1>
-        <p className="body"><span><Markdown value={props.body} /></span></p>
+        {showTitle(props.title)}
+        {showBody(props.body)}
         {props.children}
       </div>
     </HeroStyled>

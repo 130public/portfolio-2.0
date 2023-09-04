@@ -14,8 +14,35 @@ const PageIndexQuery = `{
   }
 }`
 
+// const ProjectIndexQuery = `{
+//   allMarkdownRemark(filter: {frontmatter: {type: {eq: "project"}}}) {
+//     edges {
+//       node {
+//         id
+//         internal {
+//           contentDigest
+//           type
+//           owner
+//         }
+//         frontmatter {
+//           title
+//           description
+//           cover
+//           date
+//           role
+//           slug
+//           client
+//         }
+//         excerpt(pruneLength: 5000)
+//       }
+//     }
+//   }
+// }`
+
 const ProjectIndexQuery = `{
-  allMarkdownRemark(filter: {frontmatter: {type: {eq: "project"}}}) {
+  allContentfulProject(
+    limit:100
+  ){
     edges {
       node {
         id
@@ -24,16 +51,29 @@ const ProjectIndexQuery = `{
           type
           owner
         }
-        frontmatter {
+        updatedAt
+        createdAt
+        title
+        slug
+        description{
+          description
+        }
+        date
+        type
+        role
+        thumbnail{
+          file{
+            url
+            fileName
+          }
           title
           description
-          cover
-          date
-          role
-          slug
-          client
         }
-        excerpt(pruneLength: 5000)
+        skills {
+          ... on ContentfulSkill {
+            name
+          }
+        }
       }
     }
   }
@@ -93,7 +133,7 @@ const queries = [
   },
   {
     query: ProjectIndexQuery,
-    transformer: ({ data }) => flatten(data.allMarkdownRemark.edges),
+    transformer: ({ data }) => flatten(data.allContentfulProject.edges),
     indexName: `Project`,
     settings,
   },

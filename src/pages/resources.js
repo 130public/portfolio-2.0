@@ -2,12 +2,11 @@ import * as React from "react";
 import { graphql } from "gatsby";
 
 import Layout from "../templates/layout";
-import Main from "../templates/main";
+import Main from "../components/main";
 
 import Seo from "../components/seo";
 import Hero from "../components/hero";
-import Resources from "../components/resources";
-import Cover from "../assets/wallpaper/cover_06.png";
+import Results from "../components/results";
 
 // markup
 const ResourcesPage = (props) => {
@@ -18,10 +17,9 @@ const ResourcesPage = (props) => {
         title={data.contentfulPage.metaTitle}
         description={data.contentfulPage.metaDescription}
       />
-      <Hero className="cover" cover={Cover} title={data.contentfulPage.title} body={data.contentfulPage.body.body} />
+      <Hero className="fun" title={data.contentfulPage.title} body={data.contentfulPage.body.body} />
       <Main>
-        <h2>Recently read, watched, or listened</h2>
-        <Resources enableSearch={false} hitsPerPage={1000} colWidth="320px" />
+        <Results cardType="Resource" index={["Resource"]} enableSearch={false} hitsPerPage={1000} colWidth="3" />
       </Main>
     </Layout>
   )

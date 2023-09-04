@@ -8,14 +8,22 @@ import Navigation from "../navigation";
 const HeaderStyled = styled.header`
   position: relative;
   padding-top:var(--gutter-md);
-  padding-right:var(--gutter-xl);
+  padding-right:var(--gutter-sm);
   padding-bottom:calc(var(--gutter-md) * 0.8);
-  padding-left:var(--gutter-xl);
+  padding-left:var(--gutter-sm);
   @extend .u-gutters;
   @extend .u-spacers--inside;
   display:flex;
   flex-flow:row wrap;
   z-index:1;
+  @media (min-width: 32rem){
+    padding-left:var(--gutter-md);
+    padding-right:var(--gutter-md);
+  }
+  @media (min-width: 64rem){
+    padding-left:var(--gutter-xl);
+    padding-right:var(--gutter-xl);
+  }
   
 `;
 const Header = (props) => {

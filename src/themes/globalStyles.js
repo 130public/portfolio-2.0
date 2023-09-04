@@ -85,10 +85,14 @@ export const GlobalVars = createGlobalStyle`
     --theme-font-primary:"GT Pressura", -apple-system, Arial, sans-serif;
     --theme-font-secondary:"GT Pressura Mono", 'Courier New', Courier, monospace;
     
-    --screen-max: 75rem;
+    --theme-light-swatch: rgba(245, 245, 245, 1.0);
+    --theme-dark-swatch: rgba(20, 20, 70, 1.0);
+
+    --screen-max: 120rem;
+    --screen-xl: 80rem;
     --screen-lg: 64rem;
-    --screen-md: 25rem;
-    --screen-lg: 32rem;
+    --screen-md: 32rem;
+    --screen-sm: 24rem;
 
     --base-size:20px;
     --font-xs: 0.875rem;
@@ -145,10 +149,15 @@ export const GlobalVars = createGlobalStyle`
   }
 `;
 export const GlobalStyles = createGlobalStyle`
-  html,body{margin:0;padding:0;font-size:var(--base-size);line-height: 1.5;}
+  html{
+    font-size:var(--base-size);
+    line-height: 1.5;
+  }
+  html,body{margin:0;padding:0;}
   body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    font-size: var(--font-md);
     color: ${( {theme} ) => theme.neutralForeground1};
     background: ${({ theme }) => theme.neutralBackground1};
   }
@@ -169,8 +178,8 @@ export const GlobalStyles = createGlobalStyle`
     font-size:var(--font-md);
     font-weight:700;
   }
-  p{
-    font-size:var(--font-sm);
+  p,li,pre{
+    font-size:var(--font-md);
     font-weight:300;
   }
   a{
@@ -215,5 +224,18 @@ export const GlobalStyles = createGlobalStyle`
     overflow: hidden;
     clip: rect(0,0,0,0);
     border: 0;
+  }
+  acronym{
+    cursor: help;
+    position:relative;
+  }
+  acronym[title]:hover::after {
+      content: attr(title);
+      position: absolute;
+      top: -100%;
+      left: 0;
+      font-size:24px; 
+      background:red;
+    }
   }
 `;

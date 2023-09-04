@@ -5,41 +5,13 @@ import {Link} from "gatsby";
 // styles
 const NavigationStyled = styled.nav`
   position:relative;
-  background:none;
-  @media screen and (max-width:var(--screen-md)){
-    margin-top:0.5rem;
-    margin-left:-1rem;
+  padding-top:1rem;
+  @media (min-width: 32rem){
+    padding-top:0.4rem;
     padding-left:2px;
-    width: 100vw;
-    &:before{
-      position:absolute;
-      top:0;
-      bottom:0;
-      left:-1px;
-      width:1px;
-      box-shadow: 0 0 10px 5px white;
-      content:" ";
-    }
-    &:after{
-      position:absolute;
-      top:0;
-      bottom:0;
-      right:-1px;
-      width:1px;
-      box-shadow: 0 0 10px 5px white;
-      content:" ";
-    }
   }
 `;
-const Frame = styled.div`
-  @media screen and (max-width:var(--screen-md)){
-    .frame{
-      padding-left:var(--font-xs);
-      width: 100vw;
-      overflow-x: scroll;
-    }
-  }
-`
+const Frame = styled.div``
 const List = styled.ul`
   display: flex;
   justify-content: left;
@@ -49,9 +21,6 @@ const List = styled.ul`
   font-size:var(--font-xs);
   line-height:var(--font-xs);
   height:var(--font-xs);
-  @media screen and (max-width:var(--screen-md)){
-    width:1000px;
-  }
 `
 const Item = styled.li`
   display: inline-flex;
@@ -62,6 +31,7 @@ const NavLink = styled(Link)`
   display:inline-block;
   color: ${({ theme }) => theme.neutralForeground1};
   text-decoration: none;
+  font-size:var(--font-xs);
   font-family: var(--theme-font-secondary);
   font-weight:700;
   text-transform:uppercase;

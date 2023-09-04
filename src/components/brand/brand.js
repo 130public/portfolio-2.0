@@ -7,7 +7,7 @@ const BrandLink = styled(Link)`
   position: relative;
   margin-right:var(--gutter-sm);
   font-size:var(--font-xs);
-  line-height: var(--font-xs);
+  padding-top: 4px;
   font-family:var(--theme-font-secondary);
   font-weight:700;
   text-transform:uppercase;
