@@ -33,11 +33,17 @@ const DarkThemeButton = styled(ThemeButton)`
 
 const Draft = styled.div`
   text-align: center;
-  color: white;
-  background: red;
-  font-size: var(--font-sm);
-  padding: var(--gutter-md) 0 0;
-  line-height: var(--font-xl);
+  color: black;
+  background: rgb(145 145 145 / 85%);
+  font-size: 15px;
+  padding: 4px 100px 8px;
+  line-height: 20px;
+  transform: rotate(45deg);
+  display: inline-block;
+  position: fixed;
+  top: 65px;
+  right: -130px;
+  z-index:9999;
 `
 
 
