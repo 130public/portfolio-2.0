@@ -15,7 +15,7 @@ const HeaderStyled = styled.header`
   @extend .u-spacers--inside;
   display:flex;
   flex-flow:row wrap;
-  z-index:1;
+  // box-shadow: var(--shadow16);
   @media (min-width: 32rem){
     padding-left:var(--gutter-md);
     padding-right:var(--gutter-md);
@@ -24,7 +24,6 @@ const HeaderStyled = styled.header`
     padding-left:var(--gutter-xl);
     padding-right:var(--gutter-xl);
   }
-  
 `;
 const Header = (props) => {
   return (

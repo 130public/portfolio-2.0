@@ -23,7 +23,7 @@ const SkipStyled = styled(TextLink)`
   span{
     color: ${({ theme }) => theme.colorLinkRest};
   }
-  &:focus, &:hover {
+  &:focus {
     margin-bottom: var(--border-weight);
     height: 80px;
     line-height: 80px;

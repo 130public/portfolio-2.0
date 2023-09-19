@@ -13,12 +13,14 @@ const TableStyled = styled.table`
     tr{}
     th{
       text-align: left;
+      color: ${( {theme} ) => theme.neutralForeground2};
     }
   }
   tbody{
     tr{}
     td{
       width:15%;
+      color: ${( {theme} ) => theme.neutralForeground1};
       border-top: solid 1px ${( {theme} ) => theme.neutralStroke2};
     }
   }

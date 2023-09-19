@@ -1,9 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby"
+import TransitionLink from '../transitionlink';
 
 // styles
-const BrandLink = styled(Link)`
+const BrandLink = styled(TransitionLink)`
   position: relative;
   margin-right:var(--gutter-sm);
   font-size:var(--font-xs);

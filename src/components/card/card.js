@@ -1,12 +1,12 @@
 import * as React from "react";
 import styled from "styled-components";
-import {Link} from "gatsby";
+import TransitionLink from '../transitionlink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 import Truncate from '../../components/truncate';
 import defaultFigure from '../../assets/wallpaper/cover_04.png';
 
-const CardLink = styled(Link)`
+const CardLink = styled(TransitionLink)`
   margin:0;
   padding:0;
   color: ${( {theme} ) => theme.neutralForeground1};
@@ -19,6 +19,8 @@ const CardLink = styled(Link)`
   transition: all var(--curveDecelerateMid) var(--durationUltraSlow);
   height:100%;
   &:hover, &:focus{
+    box-shadow: var(--shadow28);
+    transform: scale(1.009);
     outline:none;
     box-shadow:none;
     cursor: pointer;

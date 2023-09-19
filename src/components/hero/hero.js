@@ -74,15 +74,15 @@ const HeroStyled = styled.div`
   &.fun{
     color: ${( {theme} ) => theme.neutralForeground1OnBrand};
     background-image:linear-gradient(145deg, ${( {theme} ) => theme.colorBrandBackground1}, ${( {theme} ) => theme.colorBrandBackground2});
-    border-top: solid var(--border-weight) ${( {theme} ) => theme.colorBrandBackground1};
-    border-bottom: solid var(--border-weight) ${( {theme} ) => theme.colorBrandBackground2};
+    // border-top: solid var(--border-weight) ${( {theme} ) => theme.colorBrandBackground1};
+    // border-bottom: solid var(--border-weight) ${( {theme} ) => theme.colorBrandBackground2};
     a:not(.button, .social){
       color: ${({ theme }) => theme.neutralForeground1OnBrand};
       text-decoration: none;
-      box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.neutralForeground2OnBrand};
+      box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.neutralForeground3OnBrand};
       &:hover,&:focus{
         color: ${({ theme }) => theme.neutralForeground1OnBrand};
-        box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.colorLinkHoverOnBrand};
+        box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.neutralForeground1OnBrand};
       }
     }
     .headline span, .body span{

@@ -138,12 +138,12 @@ export const GlobalVars = createGlobalStyle`
     --curveEasyEase: cubic-bezier(0.33,0,0.67,1);
     --curveLinear: cubic-bezier(0,0,1,1);
 
-    --shadow2: 0 0 2px rgba(0;0;0;0.12); 0 1px 2px rgba(0;0;0;0.14);
-    --shadow4: 0 0 2px rgba(0;0;0;0.12); 0 2px 4px rgba(0;0;0;0.14);
-    --shadow8: 0 0 2px rgba(0;0;0;0.12); 0 4px 8px rgba(0;0;0;0.14);
-    --shadow16: 0 0 2px rgba(0;0;0;0.12); 0 8px 16px rgba(0;0;0;0.14);
-    --shadow28: 0 0 8px rgba(0;0;0;0.12); 0 14px 28px rgba(0;0;0;0.14);
-    --shadow64: 0 0 8px rgba(0;0;0;0.12); 0 32px 64px rgba(0;0;0;0.14);
+    --shadow2: 0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14);
+    --shadow4: 0 0 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.14);
+    --shadow8: 0 0 2px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.14);
+    --shadow16: 0 0 2px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.14);
+    --shadow28: 0 0 8px rgba(0,0,0,0.12), 0 14px 28px rgba(0,0,0,0.14);
+    --shadow64: 0 0 8px rgba(0,0,0,0.12), 0 32px 64px rgba(0,0,0,0.14);
 
 
   }
@@ -153,13 +153,20 @@ export const GlobalStyles = createGlobalStyle`
     font-size:var(--base-size);
     line-height: 1.5;
   }
-  html,body{margin:0;padding:0;}
+  html,body{
+    margin:0;
+    padding:0;
+    @media (prefers-color-scheme: dark) {
+      background: rgba(10, 10, 50, 1.0);
+    }
+    @media (prefers-color-scheme: light) {
+      background: rgba(245, 245, 245, 1.0);
+    }
+  }
   body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-size: var(--font-md);
-    color: ${( {theme} ) => theme.neutralForeground1};
-    background: ${({ theme }) => theme.neutralBackground1};
   }
   @media screen and (min-width: --screen-lg){
     .app,body{

@@ -14,14 +14,15 @@ const lightTheme = {
     neutralForeground3OnBrand: 'rgba(255, 255, 255, 0.25)',
     neutralForegroundInverted1: 'rgba(255, 255, 255, 1.0)',
     neutralForegroundInverted2: 'rgba(255, 255, 255, 0.75)',
+    bacgroundGradient: 'linear-gradient(145deg, #cdcdcd, #dfdfdf)',
     //
     neutralBackground1: 'rgba(245, 245, 245, 1.0)',
     neutralBackground2: 'rgba(255, 255, 255, 1.0)',
     neutralBackgroundInverted1: 'rgba(0, 5, 20, 1.0)',
     neutralBackgroundInverted2: 'rgba(0, 0, 0, 1.0)',
     //
-    neutralStroke1: 'rgba(0, 0, 0, 0.2)',
-    neutralStroke2: 'rgba(0, 0, 0, 0.25)',
+    neutralStroke1: 'rgba(0, 0, 0, 0.25)',
+    neutralStroke2: 'rgba(0, 0, 0, 0.1)',
     neutralStrokeInverted: 'rgba(200, 200, 200, 0.4)',
     //
     colorLinkRest: '#212121',

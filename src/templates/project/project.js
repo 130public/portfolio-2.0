@@ -1,10 +1,11 @@
 import React from "react"
 import ReactMarkdown from "react-markdown";
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import styled from 'styled-components'
 import Layout from "../layout"
 import Main from "../../components/main"
 import Hero from "../../components/hero"
+import TransitionLink from '../../components/transitionlink';
 import HashLink from  "../../components/hash";
 
 
@@ -131,7 +132,7 @@ const projectTemplate = (props) => {
           <Presentation>
             <Snapshot>
               <Breadcrumbs>
-                <Link to="/projects">↩ <span>Back to projects</span></Link>
+                <TransitionLink to="/projects">↩ <span>Back to projects</span></TransitionLink>
               </Breadcrumbs>
               <h1>{title}</h1>
               <img src={thumbnail.file.url} title={thumbnail.title} />
@@ -153,7 +154,7 @@ const projectTemplate = (props) => {
                   </tr>
                   <tr>
                     <td style={{paddingTop:0}} >Date</td>
-                    <td>{date}</td>
+                    <td><span style={{fontFamily:'var(--theme-font-secondary)'}}>{date}</span></td>
                   </tr>
                   <tr>
                     <td>Skills</td>

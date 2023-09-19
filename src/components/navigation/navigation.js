@@ -1,6 +1,6 @@
 import * as React from "react"
 import styled from 'styled-components';
-import {Link} from "gatsby";
+import TransitionLink from '../transitionlink';
 
 // styles
 const NavigationStyled = styled.nav`
@@ -27,7 +27,7 @@ const Item = styled.li`
   align-items: left;
   margin: 0 1rem 0 0;
 `
-const NavLink = styled(Link)`
+const NavLink = styled(TransitionLink)`
   display:inline-block;
   color: ${({ theme }) => theme.neutralForeground1};
   text-decoration: none;
